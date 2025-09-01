@@ -29,6 +29,20 @@ if ingredient_list :
     ingredients_string = ''
 
     for fruit_chosen in ingredient_list:
+        test_list = ['Apples', 'Blueberries', 'Jack fruit', 'Raspberries', 'Strawberries']
+
+        if fruit_chosen in test_list :
+          if fruit_chosen == 'Apples':
+            fruit_chosen = 'Apple'
+          elif fruit_chosen == 'Blueberries':
+            fruit_chosen = 'Blueberry'
+          elif fruit_chosen == 'Jack fruit':
+            fruit_chosen = 'Jackfruit'
+          elif fruit_chosen == 'Raspberries':
+            fruit_chosen = 'Raspberry'
+          else:
+            fruit_chosen = 'Strawberry'
+                  
         ingredients_string += fruit_chosen+ ' '
         st.subheader(fruit_chosen + ' Nutrution Information')
         smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{fruit_chosen}")
